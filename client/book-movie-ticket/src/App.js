@@ -1,12 +1,15 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Movie from "./components/Movie";
+import MovieSlot from "./components/MovieSlot";
+import Seats from "./components/Seats";
+import data from "./data";
 
 function App() {
   return (
-    <div className="m-2">
+    <div className="m-2 space-y-2">
       <h1 className="flex font-bold m-2 text-xl">Book Movie Tickets</h1>
-      <Movie />
+      <MovieSlot data={data.movies} type="Movie" />
+      <MovieSlot data={data.slots} type="Slot" />
+      <Seats />
     </div>
   );
 }
