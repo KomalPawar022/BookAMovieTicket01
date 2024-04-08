@@ -1,14 +1,17 @@
 const express = require("express");
-const app = express();
-const bodyParser = require("body-parser");
-const port = 8080;
-const path = require("path");
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-const { connection } = require("./connector");
 const cors = require("cors");
+const bookingRouter = require("./router");
+
+require("./db");
+
+const app = express();
 app.use(cors());
+app.use(express.json());
 
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+app.use("/api/bookings", bookingRouter);
 
-module.exports = app;
+app.use("/api", (req, res) => {
+  res.status(200).json({ message: "Hello World" });
+});
+
+app.listen(8080, () => console.log(`App is running at 8080...`));

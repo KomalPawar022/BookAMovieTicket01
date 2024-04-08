@@ -4,6 +4,8 @@ import Seats from "./components/Seats";
 import data from "./data";
 import LastBookingDetails from "./components/LastBookingDetails";
 
+function handleSaveBooking() {}
+
 function App() {
   return (
     <div className="m-2 ">
@@ -13,7 +15,10 @@ function App() {
           <MovieSlot data={data.movies} type="Movie" />
           <MovieSlot data={data.slots} type="Slot" />
           <Seats />
-          <button className="border rounded-lg bg-red-500 p-2 w-[150px]">
+          <button
+            className="border rounded-lg bg-red-500 p-2 w-[150px]"
+            onClick={handleSaveBooking}
+          >
             Book Now
           </button>
         </div>

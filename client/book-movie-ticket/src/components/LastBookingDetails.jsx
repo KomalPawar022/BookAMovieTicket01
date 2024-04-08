@@ -1,6 +1,6 @@
 export default function LastBookingDetails() {
   return (
-    <div className="border border-black rounded-lg ml-2 h-[300px] w-[300px]">
+    <div className="border border-black rounded-lg ml-2 h-[300px] w-[300px] p-2">
       <h1 className="font-bold text-xl">Last Booking Details:</h1>
     </div>
   );

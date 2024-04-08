@@ -8,18 +8,18 @@ export default function Seats() {
     const temp = [...selectedSeats];
     let type = e.target.parentElement.innerText.split(" ")[1];
     console.log(type);
-    let flag = false;
+    // let flag = false;
     temp.map((item) => {
       if (item[type]) {
         item[type] = e.target.valueAsNumber;
-        flag = true;
+        //flag = true;
       }
     });
-    if (!flag) {
-      let seat = {};
-      seat[type] = e.target.valueAsNumber;
-      temp.push(seat);
-    }
+    // if (!flag) {
+    //   let seat = {};
+    //   seat[type] = e.target.valueAsNumber;
+    //   temp.push(seat);
+    // }
     setSelectedSeats(temp);
   }
 
