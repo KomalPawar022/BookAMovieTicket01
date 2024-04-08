@@ -6,7 +6,20 @@ export default function Seats() {
   console.log(selectedSeats);
   function handleSelectedSeats(e) {
     const temp = [...selectedSeats];
-    temp.push(e.target.textContent);
+    let type = e.target.parentElement.innerText.split(" ")[1];
+    console.log(type);
+    let flag = false;
+    temp.map((item) => {
+      if (item[type]) {
+        item[type] = e.target.valueAsNumber;
+        flag = true;
+      }
+    });
+    if (!flag) {
+      let seat = {};
+      seat[type] = e.target.valueAsNumber;
+      temp.push(seat);
+    }
     setSelectedSeats(temp);
   }
 
