@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 import { GlobalContext } from "../context";
 export default function MovieSlot({ data, type }) {
