@@ -6,9 +6,8 @@ import data from "./data";
 import LastBookingDetails from "./components/LastBookingDetails";
 import { useContext } from "react";
 import { GlobalContext } from "./context";
-import { useNavigate } from "react-router-dom";
+
 function App() {
-  const navigate = useNavigate();
   const {
     selectedMovie,
     selectedSlot,
@@ -18,14 +17,11 @@ function App() {
     setSelectedSeats,
   } = useContext(GlobalContext);
   async function handleSaveBooking() {
-    const response = await axios.post(
-      `https://kxh7ww-8080.csb.app/api/bookings/add`,
-      {
-        movie: selectedMovie,
-        slot: selectedSlot,
-        seats: selectedSeats,
-      },
-    );
+    const response = await axios.post(`http://localhost:8080/api/booking/`, {
+      movie: selectedMovie,
+      slot: selectedSlot,
+      seats: selectedSeats,
+    });
     const result = await response.data;
     console.log("add-result", result);
     if (result) {
@@ -39,8 +35,9 @@ function App() {
         D1: 0,
         D2: 0,
       });
-      navigate("/");
     }
+
+    window.location.reload();
   }
   return (
     <div className="m-2 ">

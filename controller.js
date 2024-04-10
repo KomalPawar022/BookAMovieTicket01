@@ -45,7 +45,7 @@ const AddNewBooking = async (req, res) => {
     const newBooking = new BookMovieSchema({ movie, seats, slot });
     await newBooking.save();
 
-    return res.status(201).json({ newBooking }); // Send successful booking response
+    return res.status(200).json({ newBooking }); // Send successful booking response
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: error.message }); // Send error response

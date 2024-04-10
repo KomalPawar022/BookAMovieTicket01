@@ -3,9 +3,7 @@ import axios from "axios";
 export default function LastBookingDetails() {
   const [bookingData, setBookingData] = useState([]);
   async function fetchData() {
-    const response = await axios.get(
-      `https://kxh7ww-8080.csb.app/api/bookings/`,
-    );
+    const response = await axios.get(`http://localhost:8080/api/`);
     const result = await response.data;
     console.log("result", result.data);
     if (result.data.length > 0) {
