@@ -10,8 +10,4 @@ app.use(express.json());
 
 app.use("/api", bookingRouter);
 
-app.use("/api", (req, res) => {
-  res.status(200).json({ message: "Hello World" });
-});
-
-app.listen(8080, () => console.log(`App is running at 8080...`));
+app.listen(8081, () => console.log(`App is running at 8080...`));

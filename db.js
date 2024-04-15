@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 mongoose
   .connect(
-    "mongodb+srv://KomalPawar:mongoPassword@atlascluster.utzf9ud.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster",
+    "mongodb+srv://komalpawar022:Mylo12345@cluster0.rcksu1q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
     { useNewUrlParser: true },
     { useUnifiedTopology: true },
   )

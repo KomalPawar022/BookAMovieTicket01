@@ -17,7 +17,7 @@ function App() {
     setSelectedSeats,
   } = useContext(GlobalContext);
   async function handleSaveBooking() {
-    const response = await axios.post(`http://localhost:8080/api/booking/`, {
+    const response = await axios.post(`https://kr9383-8081.csb.app/api/new`, {
       movie: selectedMovie,
       slot: selectedSlot,
       seats: selectedSeats,
