@@ -17,11 +17,14 @@ function App() {
     setSelectedSeats,
   } = useContext(GlobalContext);
   async function handleSaveBooking() {
-    const response = await axios.post(`https://kr9383-8081.csb.app/api/new`, {
-      movie: selectedMovie,
-      slot: selectedSlot,
-      seats: selectedSeats,
-    });
+    const response = await axios.post(
+      `https://kr9383-8081.csb.app/api/booking`,
+      {
+        movie: selectedMovie,
+        slot: selectedSlot,
+        seats: selectedSeats,
+      },
+    );
     const result = await response.data;
     console.log("add-result", result);
     if (result) {
