@@ -4,15 +4,17 @@ import { GlobalContext } from "../context";
 export default function MovieSlot({ data, type }) {
   const { selectedMovie, setSelectedMovie, selectedSlot, setSelectedSlot } =
     useContext(GlobalContext);
-
+  //  Render MovieSlot Component
   return (
     <div className="flex flex-col border border-black rounded-lg p-2">
       <div>
         <h2 className="text-lg font-bold">
+          {/*  Display Heading based on type */}
           {type === "Movie" ? "Select a Movie" : "Select A Time Slot"}
         </h2>
       </div>
       <div className="flex grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
+        {/*  Loop through Data and Render Buttons */}
         {data.map((item, index) => {
           return (
             <button

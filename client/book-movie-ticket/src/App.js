@@ -17,6 +17,7 @@ function App() {
     setSelectedSeats,
   } = useContext(GlobalContext);
   async function handleSaveBooking() {
+    //Send Booking Request to API
     const response = await axios.post(
       `https://bookamovieticket01.onrender.com/api/booking`,
       {
@@ -26,8 +27,9 @@ function App() {
       },
     );
     const result = await response.data;
-    console.log("add-result", result);
+
     if (result) {
+      //Reset Booking State
       setSelectedMovie(null);
       setSelectedSlot(null);
       setSelectedSeats({
@@ -39,7 +41,7 @@ function App() {
         D2: 0,
       });
     }
-
+    // Reload Page
     window.location.reload();
   }
   return (

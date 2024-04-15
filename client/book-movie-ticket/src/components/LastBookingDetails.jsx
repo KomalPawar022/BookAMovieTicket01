@@ -2,21 +2,24 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 export default function LastBookingDetails() {
   const [bookingData, setBookingData] = useState([]);
+  //Function to fetch booking data from API
   async function fetchData() {
     const response = await axios.get(
       `https://bookamovieticket01.onrender.com/api/booking`,
     );
     const result = await response.data;
     console.log("result", result.data);
+    //Update state with booking data if available
     if (result.data.length > 0) {
       setBookingData(result.data);
     }
   }
-  console.log("bookingData", bookingData);
+
+  //Fetch data on component mount
   useEffect(() => {
     fetchData();
   }, []);
-
+  //Render booking details if data is available
   return (
     <div className="border border-black rounded-lg ml-2 h-[300px] w-[300px] p-2 overflow-auto">
       <h1 className="font-bold text-xl">Last Booking Details:</h1>
