@@ -1,25 +1,26 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { seats } from "../data";
 import { GlobalContext } from "../context";
 export default function Seats() {
   const { selectedSeats, setSelectedSeats } = useContext(GlobalContext);
-  console.log(selectedSeats);
+
   function handleSelectedSeats(e) {
-    const temp = [...selectedSeats];
+    const temp = selectedSeats;
     let type = e.target.parentElement.innerText.split(" ")[1];
-    console.log(type);
+
     // let flag = false;
-    temp.map((item) => {
-      if (item[type]) {
-        item[type] = e.target.valueAsNumber;
-        //flag = true;
-      }
-    });
+    // temp.map((item) => {
+    //   if (item[type]) {
+    //     item[type] = e.target.valueAsNumber;
+    //flag = true;
+    //   }
+    // });
     // if (!flag) {
     //   let seat = {};
     //   seat[type] = e.target.valueAsNumber;
     //   temp.push(seat);
     // }
+    temp[type] = e.target.valueAsNumber;
     setSelectedSeats(temp);
   }
 
