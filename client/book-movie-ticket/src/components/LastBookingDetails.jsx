@@ -3,7 +3,9 @@ import axios from "axios";
 export default function LastBookingDetails() {
   const [bookingData, setBookingData] = useState([]);
   async function fetchData() {
-    const response = await axios.get(`https://kr9383-8081.csb.app/api/booking`);
+    const response = await axios.get(
+      `https://bookamovieticket01.onrender.com/api/booking`,
+    );
     const result = await response.data;
     console.log("result", result.data);
     if (result.data.length > 0) {

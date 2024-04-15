@@ -18,7 +18,7 @@ function App() {
   } = useContext(GlobalContext);
   async function handleSaveBooking() {
     const response = await axios.post(
-      `https://kr9383-8081.csb.app/api/booking`,
+      `https://bookamovieticket01.onrender.com/api/booking`,
       {
         movie: selectedMovie,
         slot: selectedSlot,
