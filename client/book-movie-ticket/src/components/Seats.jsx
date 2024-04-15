@@ -8,18 +8,6 @@ export default function Seats() {
     const temp = selectedSeats;
     let type = e.target.parentElement.innerText.split(" ")[1];
 
-    // let flag = false;
-    // temp.map((item) => {
-    //   if (item[type]) {
-    //     item[type] = e.target.valueAsNumber;
-    //flag = true;
-    //   }
-    // });
-    // if (!flag) {
-    //   let seat = {};
-    //   seat[type] = e.target.valueAsNumber;
-    //   temp.push(seat);
-    // }
     temp[type] = e.target.valueAsNumber;
     setSelectedSeats(temp);
   }
@@ -45,6 +33,8 @@ export default function Seats() {
               <input
                 type="number"
                 className="border border-grey-800 mb-2 w-[100px]"
+                role="spinbutton"
+                name={item}
               />
             </div>
           );
